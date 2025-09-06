@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Crew - BDS Energy & Marine</title>
+  <link rel="stylesheet" href="style.css">
+   <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo d-flex align-items-center">
+        <img src="img/logo.png" alt="BDS Logo" class="logo-img me-2" style="height:40px;">
+        <span class="text-white fw-bold">BDS Energy & Marine</span>
+      </div>
+
+      <!-- Navbar Toggler (mobile menu) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="-us.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+
+          <!-- Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="opportunitiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Opportunities
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="opportunitiesDropdown">
+              <li><a class="dropdown-item" href="find-job.html">Find Job</a></li>
+              <li><a class="dropdown-item" href="find-crew.html">Find Crew</a></li>
+              <li><a class="dropdown-item" href="upload-cv.html">Upload CV</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+ <!-- Crew Search Form -->
+<section class="cta-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0 rounded-3">
+          <div class="card-body p-4">
+            <h2 class="text-center mb-4">Company - Request for Crew</h2>
+            <form 
+              action="crewrequest.php" 
+              method="POST" 
+              enctype="multipart/form-data">
+<div class="row mb-3">
+  <div class="col-md-6">
+              <div class="mb-3">
+                <label for="company" class="form-label">Company Name</label>
+                <input type="text" id="company" name="company" class="form-control" placeholder="Enter your company name" required>
+              </div>
+</div>
+<div class="col-md-6">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+  </div>
+</div>
+             <!-- Job Type & Vessel Type side by side -->
+<div class="row mb-3">
+  <div class="col-md-6">
+    <label for="jobType" class="form-label">Job Type</label>
+    <select id="jobType" name="jobType" class="form-select" required>
+      <option value="" disabled selected>Select job type</option>
+      <option value="Permanent">Permanent</option>
+      <option value="Contract">Contract</option>
+      <option value="Temporary">Temporary</option>
+      <option value="Seasonal">Seasonal</option>
+    </select>
+  </div>
+  
+  <div class="col-md-6">
+    <label for="vesselType" class="form-label">Vessel Type</label>
+    <select id="vesselType" name="vesselType" class="form-select" required>
+      <option value="" disabled selected>Select vessel type</option>
+      <option value="Cargo Ship">Cargo Ship</option>
+      <option value="Tanker">Tanker</option>
+      <option value="Offshore Support Vessel">Offshore Support Vessel</option>
+      <option value="Fishing Vessel">Fishing Vessel</option>
+      <option value="Passenger Ship">Passenger Ship</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+</div>
+
+
+              <div class="mb-3">
+                <label for="crew" class="form-label">Crew Details</label>
+                <textarea id="crew" name="crew" class="form-control" rows="4" placeholder="Describe the crew you need" required></textarea>
+              </div>
+              <div class="mb-3">
+  <label for="template" class="form-label">Upload CV Template (optional)</label>
+  <input type="file" id="template" name="template" class="form-control" 
+         accept=".pdf,.doc,.docx,.rtf,.odt,.xls,.xlsx">
+</div>
+
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Find Crew</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 BDS Energy & Marine Services Limited. All rights reserved.</p>
+  </footer>
+</body>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

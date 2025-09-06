@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload CV - BDS Energy & Marine</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo d-flex align-items-center">
+        <img src="img/logo.png" alt="BDS Logo" class="logo-img me-2" style="height:40px;">
+        <span class="text-white fw-bold">BDS Energy & Marine</span>
+      </div>
+
+      <!-- Navbar Toggler (mobile menu) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+
+          <!-- Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="opportunitiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Opportunities
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="opportunitiesDropdown">
+              <li><a class="dropdown-item" href="find-job.html">Find Job</a></li>
+              <li><a class="dropdown-item" href="find-crew.html">Find Crew</a></li>
+              <li><a class="dropdown-item active" href="upload-cv.html">Upload CV</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Upload CV Form -->
+<section class="cta-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0 rounded-3">
+          <div class="card-body p-4">
+            <h2 class="text-center mb-4">Upload a Seafarer's CV</h2>
+            <form  action="sendcvmail.php" method="POST" enctype="multipart/form-data">
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="position" class="form-label">Position Applied For</label>
+                <input type="text" id="position" name="position" class="form-control" placeholder="Enter job title" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="cv" class="form-label">Upload CV</label>
+                <input type="file" id="cv" name="attachment" class="form-control" accept=".pdf,.doc,.docx,.xls,.xlsx" required>
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="mt-5 text-center">
+  <p>&copy; 2025 BDS Energy & Marine Services Limited. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+############################################
+# 1. Force HTTPS + www (choose your style)
+############################################
+
+# 🔹 OPTION A: Force www + HTTPS
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
+
+# 🔹 OPTION B: Force non-www + HTTPS
+# Uncomment this block instead if you prefer https://example.com (no www)
+# RewriteCond %{HTTPS} !=on [OR]
+# RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+
+############################################
+# 2. Clean URLs for PHP form handlers
+############################################
+# /apply/job   → find-job.php
+RewriteRule ^apply/job$ find-job.php [L]
+
+# /apply/crew  → find-crew.php
+RewriteRule ^apply/crew$ find-crew.php [L]
+
+# /apply/cv    → upload-cv.php
+RewriteRule ^apply/cv$ upload-cv.php [L]
+
+
+############################################
+# 3. Clean URLs for HTML pages (hide .html)
+############################################
+# Allow accessing pages without .html extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^/]+)$ $1.html [L]
+
+# Example:
+#   /find-job   → find-job.html
+#   /find-crew  → find-crew.html
+#   /upload-cv  → upload-cv.html
+
+
+############################################
+# 4. Redirect old .html links to clean versions (SEO)
+############################################
+RewriteRule ^find-job\.html$ find-job [R=301,L]
+RewriteRule ^find-crew\.html$ find-crew [R=301,L]
+RewriteRule ^upload-cv\.html$ upload-cv [R=301,L]
+RewriteRule ^contact\.html$ contact [R=301,L]
+RewriteRule ^index\.html$ index [R=301,L]
+RewriteRule ^about\.html$ about [R=301,L]
+RewriteRule ^services\.html$ services [R=301,L]
+RewriteRule ^index\.html$ index [R=301,L]
+RewriteRule ^about-us\.html$ about-us [R=301,L]
+RewriteRule ^services\.html$ services [R=301,L]
+
+
+SetEnv SMTP_USER crewinfo@bdsen-marines.com
+SetEnv SMTP_PASS Stanley_08069795682
+
